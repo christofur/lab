@@ -18,7 +18,6 @@ import { createStore } from 'redux'
  * App imports
  */
 import Core from './components/Core/Core';
-import AlgoDashboard from './containers/AlgoDashboard';
 
 /**
  * Reducers. They take in an action and a state, and return a new state
