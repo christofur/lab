@@ -1,4 +1,5 @@
 var express = require('express');
+var http = require('http');
 
 var app = express();
 
@@ -8,6 +9,8 @@ app.param('id', (req, res, next, id) => {
   req.userId = id;
   next();
 });
+
+
 
 app.get('/:id', (req, res) => {
   
@@ -20,8 +23,8 @@ app.get('/:id', (req, res) => {
   logs += '\nxhr: ' + req.xhr;
   logs += '\nprotocol: ' + req.protocol;
   logs += '\nsecure: ' + req.secure;
-  
-  res.send(logs);
+  logs += '\nincoming: ' + JSON.stringify(req.headers);
+  res.send(logs + '\n');
 });
 
 exports = module.exports = app;
