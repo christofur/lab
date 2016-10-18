@@ -1,0 +1,24 @@
+Design Principles and Best Practices
+
+Design small modules, in terms of code size, and in terms of scope. "Make each program do one thing well"
+
+Use NPM to get rid of "dependency hell" by ensuring each installed package has its own separate set of depedencies.
+
+Ensure you practice DRY (Don't Repeat Yourself) by sharing and using packages instead of writing your own code.
+
+Design usable, clear APIs by keeping them small - having a small surface area. Expose only one function or constructor. Other functionality can be exposed as properties of that function.
+
+Prefer simplicity over perfection (KISS). Example: JavaScript provides some trivial alternatives to the classical design patterns - even if they're not mathematically perfect, they accomplish the same effect in many cases.
+
+Know how long LTS your version of Node has. Are you picking the correct version? Will you be able to upgrade before LTS runs out?
+
+Use "use strict" whenever you can. Some Node features will only work when this flag is set.
+
+Understand the difference between "const" in JS vs other languages. It means that the reference will remain constant - not the value.
+
+Use const when requiring a module, so that the module cannot be accidentally reassigned.
+
+User Object.freeze when you actually want to create a constant in a similar way to other languages.
+
+Use WeakMap and WeakSet when you need to ensure objects inside them can be GC'd if the map or set contains the only remaining reference
+
